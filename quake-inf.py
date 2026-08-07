@@ -7,7 +7,7 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
-st.markdown('<h2 class="head">日本の地震国へようこそ</h2>')
+st.markdown('<h2 class="head">日本の地震国へようこそ</h2>', unsafe_allow_html=True)
 page = st.sidebar.selectbox('メニュー', ['震度データベース', '過去の地震、津波、及び火山災害', '防災知識を高めるには?'], index=0)
 
 if page == '震度データベース':
