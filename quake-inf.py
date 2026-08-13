@@ -13,7 +13,7 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
-page = st.sidebar.selectbox('メニュー', ['HOME', '震度データベース', '過去の地震、津波、及び火山災害', '想定南海トラフ巨大地震', '想定日本海溝・千島海溝巨大地震'], index=0)
+page = st.sidebar.radio('メニュー', ['HOME', '震度データベース', '過去の地震、津波、及び火山災害', '想定南海トラフ巨大地震', '想定日本海溝・千島海溝巨大地震'], index=0)
 if page == 'HOME':
     st.markdown('<p class="a">ようこそ</p>', unsafe_allow_html=True)
 elif page == '震度データベース':
