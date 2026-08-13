@@ -5,7 +5,7 @@ st.markdown(
     """
     <style>
     .a{
-         font-size: 30px;
+         font-size: large;
          font-weight: bold;
          color: white; 
          background-color: blue; 
