@@ -32,7 +32,18 @@ elif page == '震度データベース':
     if not filtered_df.empty:
         time_options = filtered_df["time"]
         selected_time = st.sidebar.selectbox(label="発生時刻を選択", options=time_options)
-        
+        final_df = filtered_df[filtered_df["time"] == selected_time]
+        if not final_df.empty:
+            epicenter_val = final_df["epicenter"].iloc[0]
+            depth_val = final_df["depth"].iloc[0]
+            magnitude_val = final_df["magnitude"].iloc[0]
+            epicenter_lat = final_df["緯度"].iloc[0]
+            epicenter_lng = final_df["経度"].iloc[0]
+            st.sidebar.markdown(f"震源地: {epicenter_val}")
+            st.sidebar.markdown(f"緯度: {epicenter_lat}")
+            st.sidebar.markdown(f"経度: {epicenter_lng}")
+            st.sidebar.markdown(f"深さ: {depth_val}　　規模: {magnitude_val}")
+            
     
 elif page == '過去の地震、津波、及び火山災害':
     st.markdown('<p class="a">過去の地震、津波、及び火山災害</p>', unsafe_allow_html=True)
