@@ -26,8 +26,8 @@ elif page == '震度データベース':
     )
     df = pd.read_csv('https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/YearlyQuake/2*.csv')
     df['datetime_date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.date
-    if filtered_df = df[df['datetime_date'] == select_date]
-        st.sidebar.selectbox('地震発生時刻を選択', [df[time]]):
+    if df['datetime_date'] == select_date:
+        st.sidebar.selectbox('地震発生時刻を選択', [df[time]])
     
 elif page == '過去の地震、津波、及び火山災害':
     st.markdown('<p class="a">過去の地震、津波、及び火山災害</p>', unsafe_allow_html=True)
