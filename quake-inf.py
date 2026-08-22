@@ -40,9 +40,9 @@ elif page == '震度データベース':
             epicenter_lat = final_df["緯度"].iloc[0]
             epicenter_lng = final_df["経度"].iloc[0]
             max_intensity = final_df["maxshindo"].iloc[0]
-            st.sidebar.markdown(f"震源地：{epicenter_val}")
-            st.sidebar.markdown(f"緯度：{epicenter_lat}　　経度：{epicenter_lng}")
-            st.sidebar.markdown(f"深さ：{depth_val}　　規模：{magnitude_val}　　最大{max_intensity}")
+            st.sidebar.markdown(f"震源地: {epicenter_val}")
+            st.sidebar.markdown(f"緯度: {epicenter_lat}　　経度: {epicenter_lng}")
+            st.sidebar.markdown(f"深さ: {depth_val}　　M{magnitude_val}　　最大{max_intensity}")
             
     
 elif page == '過去の地震、津波、及び火山災害':
