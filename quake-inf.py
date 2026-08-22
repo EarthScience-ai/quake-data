@@ -24,7 +24,7 @@ elif page == '震度データベース':
         min_value=datetime.date(2001, 1, 1),
         max_value=datetime.date(2100, 12, 31),
     )
-    df = pd.read_csv('https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/YearlyQuake/2*.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/YearlyQuake/2001.csv')
     df['datetime_date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.date
     if df['datetime_date'] == select_date:
         st.sidebar.selectbox('地震発生時刻を選択', [df[time]])
