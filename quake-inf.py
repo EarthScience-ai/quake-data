@@ -47,10 +47,36 @@ elif page == '震度データベース':
             st.sidebar.markdown(f"震源地: {epicenter_val}")
             st.sidebar.markdown(f"緯度: {epicenter_lat}　経度: {epicenter_lng}")
             st.sidebar.markdown(f"深さ: {depth_val}　M {magnitude_val}　　最大{max_intensity}")
+
+            formatted_time = str(selected_time).replace(":", "-")
+            shindo_file = f"{select_date}_{formatted_time}.csv"
+            shindo_url = f"https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/QuakeDetected/{shindo_file}"
+            shindo_df = pd.read_csv(shindo_url)
+
+            def get_color(shindo):
+                shindo = str(shindo).strip()
+                if shindo == "7": return magenta
+                elif shindo == "6強": return crimson
+                elif shindo == "6弱": return red
+                elif shindo == "5強": return peru
+                elif shindo == "5弱": return orange
+                elif shindo == "4": return yellow
+                elif shindo == "3": return lawngreen
+                elif shindo == "2": return aqua
+                elif shindo == "1": return blue
+            
             m = folium.Map(location=[36.0, 137.0], zoom_start=5)
+            
             for index, row in final_df.iterrows():
                 icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
                 folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x).add_to(m)
+
+            for index, row in shindo_df.iterrows():
+                folium.CircleMarker(
+                    location=[row['lat'],row['lng']], radius=1000,
+                    fill_opacity=1, fill=True, 
+                    fill_color=get_color(row['shindo']),
+                ).add_to(m)
             st_folium(m,width="100%")
     else:
         st.subheader(f"No Data...")
