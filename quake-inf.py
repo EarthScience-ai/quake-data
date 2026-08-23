@@ -61,7 +61,7 @@ elif page == '震度データベース':
                 elif shindo == "5強": return '#cd853f'
                 elif shindo == "5弱": return '#ffa500'
                 elif shindo == "4": return '#ffff00'
-                elif shindo == "3": return '#7cfc00'
+                elif shindo == "3": return '#00ff00'
                 elif shindo == "2": return '#00bfff'
                 elif shindo == "1": return '#0000ff'
             
@@ -73,7 +73,7 @@ elif page == '震度データベース':
 
             for index, row in shindo_df.iterrows():
                 folium.CircleMarker(
-                    location=[row['lat'],row['lng']], radius=5,
+                    location=[row['lat'],row['lng']], radius=3,
                     fill_opacity=1, fill=True, stroke=False,
                     fill_color=get_color(row['shindo']),
                 ).add_to(m)
