@@ -58,7 +58,7 @@ elif page == '震度データベース':
                 if shindo == "7": return '#ff00ff'
                 elif shindo == "6強": return '#dc143c'
                 elif shindo == "6弱": return '#ff0000'
-                elif shindo == "5強": return '#cd853f'
+                elif shindo == "5強": return '#800000'
                 elif shindo == "5弱": return '#ffa500'
                 elif shindo == "4": return '#ffff00'
                 elif shindo == "3": return '#00ff00'
