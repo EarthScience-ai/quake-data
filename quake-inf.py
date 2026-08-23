@@ -53,7 +53,7 @@ elif page == '震度データベース':
                 folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x).add_to(m)
             st_folium(m,width="100%")
     else:
-        st.sidebar.markdown(f"有感、震度１以上の地震が発生していません。")
+        st.sidebar.markdown(f"震度１以上の地震が発生していません。2026年のデータは翌年になります。")
     
 elif page == '過去の地震、津波、及び火山災害':
     st.markdown('<p class="a">過去の地震、津波、及び火山災害</p>', unsafe_allow_html=True)
