@@ -53,7 +53,7 @@ elif page == '震度データベース':
                 popup_text = f"震源: {row['epicenter']}<br>規模: M{row['magnitude']} 深さ: {row['depth']}"
                 icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
                 folium.Marker(location=[row["lat"], row["lng"]], popup=popup_text, icon=icon_x).add_to(m)
-            st_folium(m, width=700, height=500, returned_objects=[])
+            st_folium(m, width=100%, height=500, returned_objects=[])
     
 elif page == '過去の地震、津波、及び火山災害':
     st.markdown('<p class="a">過去の地震、津波、及び火山災害</p>', unsafe_allow_html=True)
