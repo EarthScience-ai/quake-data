@@ -24,7 +24,7 @@ elif page == '震度データベース':
         label="地震発生日付を選択",
         value=datetime.date.today(), 
         min_value=datetime.date(2001, 1, 1),
-        max_value=datetime.date(2025, 12, 31),
+        max_value=datetime.date(2100, 12, 31),
     )
     file = f"{select_date.year}.csv"
     url = f"https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/YearlyQuake/{file}"
