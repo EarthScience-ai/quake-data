@@ -28,7 +28,7 @@ elif page == '震度データベース':
     )
     file = f"{select_date.year}.csv"
     url = f"https://raw.githubusercontent.com/EarthScience-ai/quake-data/refs/heads/main/YearlyQuake/{file}"
-    final_df = pd.read_csv(url)
+    df = pd.read_csv(url)
     df['datetime_date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.date
     filtered_df = df[df["datetime_date"] == select_date]
     if not filtered_df.empty:
