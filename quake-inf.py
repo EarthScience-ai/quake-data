@@ -65,7 +65,7 @@ elif page == '震度データベース':
                 elif shindo == "2": return '#00bfff'
                 elif shindo == "1": return '#0000ff'
             
-            m = folium.Map(location=[36.0, 137.0], zoom_start=5,tiles="CartoDB dark_matter")
+            m = folium.Map(location=[36.0, 137.0], zoom_start=5,tiles="CartoDB positron")
             
             for index, row in final_df.iterrows():
                 icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
@@ -73,7 +73,7 @@ elif page == '震度データベース':
 
             for index, row in shindo_df.iterrows():
                 folium.CircleMarker(
-                    location=[row['lat'],row['lng']], radius=3,
+                    location=[row['lat'],row['lng']], radius=1,
                     fill_opacity=1, fill=True, stroke=False,
                     fill_color=get_color(row['shindo']),
                 ).add_to(m)
