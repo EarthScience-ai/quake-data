@@ -55,15 +55,15 @@ elif page == '震度データベース':
 
             def get_color(shindo):
                 shindo = str(shindo).strip()
-                if shindo == "7": return magenta
-                elif shindo == "6強": return crimson
-                elif shindo == "6弱": return red
-                elif shindo == "5強": return peru
-                elif shindo == "5弱": return orange
-                elif shindo == "4": return yellow
-                elif shindo == "3": return lawngreen
-                elif shindo == "2": return aqua
-                elif shindo == "1": return blue
+                if shindo == "7": return '#ff00ff'
+                elif shindo == "6強": return '#dc143c'
+                elif shindo == "6弱": return '#ff0000'
+                elif shindo == "5強": return '#cd853f'
+                elif shindo == "5弱": return '#ffa500'
+                elif shindo == "4": return '#ffff00'
+                elif shindo == "3": return '#7cfc00'
+                elif shindo == "2": return '#00bfff'
+                elif shindo == "1": return '#0000ff'
             
             m = folium.Map(location=[36.0, 137.0], zoom_start=5)
             
