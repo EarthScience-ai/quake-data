@@ -50,7 +50,7 @@ elif page == '震度データベース':
             m = folium.Map(location=[36.0, 137.0], zoom_start=5)
             for index, row in final_df.iterrows():
                 icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
-                folium.Marker(location=[row["lat"], row["lng"]], popup=popup_text, icon=icon_x).add_to(m)
+                folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x).add_to(m)
             st_folium(m,width="100%")
     
 elif page == '過去の地震、津波、及び火山災害':
