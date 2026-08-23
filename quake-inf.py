@@ -73,8 +73,8 @@ elif page == '震度データベース':
 
             for index, row in shindo_df.iterrows():
                 folium.CircleMarker(
-                    location=[row['lat'],row['lng']], radius=10,
-                    fill_opacity=1,  
+                    location=[row['lat'],row['lng']], radius=3,
+                    fill_opacity=1, fill=True, 
                     fill_color=get_color(row['shindo']),
                 ).add_to(m)
             st_folium(m,width="100%")
