@@ -67,17 +67,20 @@ elif page == '震度データベース':
             
             m = folium.Map(location=[36.0, 137.0], zoom_start=5, tiles="NASAGIBS Blue Marble")
             
-            for index, row in final_df.iterrows():
-                icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
-                folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x).add_to(m)
-
             for index, row in shindo_df.iterrows():
                 folium.CircleMarker(
                     location=[row['lat'],row['lng']], radius=2,
                     fill_opacity=1, fill=True, stroke=False,
                     fill_color=get_color(row['shindo']),
                 ).add_to(m)
+            
+            for index, row in final_df.iterrows():
+                icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
+                folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x
+                ).add_to(m)
+            
             st_folium(m,width="100%")
+            
     else:
         st.subheader(f"No Data...")
         st.markdown(f"その原因:")
