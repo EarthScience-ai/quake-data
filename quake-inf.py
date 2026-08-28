@@ -64,7 +64,7 @@ elif page == '震度データベース':
                 elif shindo == "3": return '#9acd32'
                 elif shindo == "2": return '#00bfff'
                 elif shindo == "1": return '#0000ff'
-                else: return gray
+                elif shindo == "NoData": return '#a9a9a9'
             
             m = folium.Map(location=[36.0, 137.0], zoom_start=5, tiles="NASAGIBS Blue Marble")
             
