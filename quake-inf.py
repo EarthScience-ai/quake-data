@@ -75,7 +75,7 @@ elif page == '震度データベース':
                 ).add_to(m)
             
             for index, row in final_df.iterrows():
-                icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: red; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
+                icon_x = folium.DivIcon(html=f'<div style="font-size: 16px; color: white; font-weight: bold; transform: translate(-50%, -50%);">❌</div>')
                 folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x
                 ).add_to(m)
             
