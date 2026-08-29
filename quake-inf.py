@@ -79,7 +79,7 @@ elif page == '震度データベース':
                 folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x
                 ).add_to(m)
             
-            st_folium(m,width="100%")
+            st_folium(m,width="100%",height=750)
             
     else:
         st.subheader(f"No Data...")
