@@ -65,7 +65,7 @@ elif page == '震度データベース':
                 elif shindo == "2": return '#00bfff'
                 elif shindo == "1": return '#0000ff'
             
-            m = folium.Map(location=[36.0, 137.0], zoom_start=5, tiles="NASAGIBS Blue Marble")
+            m = folium.Map(location=[36.0, 137.0], zoom_start=6, tiles="NASAGIBS Blue Marble")
             
             for index, row in shindo_df.iterrows():
                 folium.CircleMarker(
@@ -79,7 +79,7 @@ elif page == '震度データベース':
                 folium.Marker(location=[row["lat"], row["lng"]], icon=icon_x
                 ).add_to(m)
             
-            st_folium(m,width="90%",height=500)
+            st_folium(m,width="90%",height=300)
             
     else:
         st.subheader(f"No Data...")
